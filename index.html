@@ -402,6 +402,15 @@
         footer a { color: var(--ink); }
         footer p { margin-bottom: 6px; }
 
+        .manager { margin-top: 18px; padding: 16px; background: #f6f8ec; border-radius: 12px; text-align: left; }
+        .manager-name { font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+        .manager-name small { display: block; font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+        .manager a { display: flex; align-items: center; min-height: 44px; color: var(--ink); font-weight: 600; text-decoration: none; }
+        .manager a:hover { text-decoration: underline; }
+        a.btn { text-decoration: none; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .sticky-cta .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .sticky-cta .btn.alt { background: transparent; color: #fff; border: 2px solid var(--accent); }
+
         /* Sticky CTA */
         .sticky-cta {
             position: fixed;
@@ -590,10 +599,15 @@
                 <div class="price-new">1&nbsp;500 <span>BYN / мес</span></div>
                 <p class="price-note">Экономия 4&nbsp;200 BYN в год при сохранении полного объема работ</p>
 
-                <!-- В исходном файле не было телефона, Telegram или e-mail — только эта кнопка. Контакт не выдумывали. -->
-                <button type="button" class="btn" onclick="alert('Владислав, спасибо! Я подготовлю и вышлю вам проект заказа услуг.')">
+                <a class="btn" href="https://t.me/NatalliaDaroshka" target="_blank" rel="noopener">
                     Выслать проект заказа услуг
-                </button>
+                </a>
+
+                <div class="manager">
+                    <div class="manager-name">Наталья Дорошко<small>ваш менеджер в Local Media</small></div>
+                    <a href="tel:+375447417584">📞 +375 44 741 75 84</a>
+                    <a href="https://t.me/NatalliaDaroshka" target="_blank" rel="noopener">✈️ Telegram: @NatalliaDaroshka</a>
+                </div>
 
                 <div class="final-note">
                     <strong>Важно:</strong> Владислав, я направляю вам проект заказа услуг. Взвесьте все факты, оцените перспективы для вашего бизнеса и примите взвешенное решение.
@@ -652,14 +666,16 @@
         <div class="container">
             <img class="logo" src="logo.png" width="121" height="60" alt="Local Media">
             <p>© 2026 Профессиональная разработка и SEO-продвижение. Мы помогаем локальному бизнесу расти.</p>
+            <p>Менеджер: Наталья Дорошко · <a href="tel:+375447417584">+375 44 741 75 84</a> · <a href="https://t.me/NatalliaDaroshka" rel="noopener">Telegram</a></p>
             <p><a href="https://localmedia.by/" rel="noopener">localmedia.by</a></p>
         </div>
     </footer>
 
     <div class="sticky-cta">
-        <button type="button" class="btn" onclick="document.getElementById('offer').scrollIntoView({behavior:'smooth'});">
-            Выслать проект заказа услуг
-        </button>
+        <div class="row">
+            <a class="btn" href="https://t.me/NatalliaDaroshka" target="_blank" rel="noopener">Написать в Telegram</a>
+            <a class="btn alt" href="tel:+375447417584">Позвонить</a>
+        </div>
     </div>
 
 </body>
