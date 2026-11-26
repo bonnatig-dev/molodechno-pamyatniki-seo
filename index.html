@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f2">
+    <meta name="description" content="Предложение для Владислава: SEO на старте разработки сайта памятников в Молодечно. Пакет «Стандарт» со скидкой до 31 декабря.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Стратегия развития сайта | Изготовление памятников, Молодечно</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        @font-face {
+            font-family: "Montserrat";
+            src: url("fonts/Montserrat.woff2") format("woff2");
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Mont-Bold";
+            src: url("fonts/Mont-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --accent: #bbda27;
+            --ink: #182022;
+            --text: #1d212a;
+            --muted: #5a6b73;
+            --card: #ffffff;
+            --bg: #f2f2f2;
+            --ring: rgba(187, 218, 39, 0.25);
+            --shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            --sticky-h: 72px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "Montserrat", Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            font-size: 16px;
+            line-height: 1.65;
+            padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom));
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: var(--ink); }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Top bar — as on localmedia.by */
+        .topbar {
+            background: #f2f2f2;
+            border-bottom: 1px solid rgba(24, 32, 34, 0.08);
+            padding: 10px 0;
+        }
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .topbar .logo {
+            height: 40px;
+            width: auto;
+        }
+        .topbar .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            text-align: right;
+        }
+
+        /* Hero */
+        header.hero {
+            background: var(--ink);
+            color: #fff;
+            padding: 36px 0 40px;
+        }
+        header.hero h1 {
+            font-family: "Mont-Bold", "Montserrat", sans-serif;
+            font-size: 1.7rem;
+            line-height: 1.25;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        header.hero h1 span { color: var(--accent); white-space: nowrap; }
+        header.hero .lead {
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 42em;
+        }
+
+        /* Sections */
+        section { padding: 44px 0; }
+        section.alt { background: var(--card); }
+
+        .section-title {
+            font-family: "Mont-Bold", "Montserrat", sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 84px;
+            height: 3px;
+            margin-top: 12px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent), rgba(187, 218, 39, 0));
+        }
+        .section-intro {
+            margin: 16px 0 24px;
+            color: var(--muted);
+        }
+
+        /* Personal message — original block */
+        .personal-message {
+            background: var(--card);
+            border-left: 5px solid var(--accent);
+            padding: 22px 18px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        .personal-message h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+        .personal-message p { margin-bottom: 12px; color: #333; }
+        .personal-message p:last-child { margin-bottom: 0; }
+        .highlight {
+            background: rgba(187, 218, 39, 0.28);
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        /* Why cards */
+        .why-list { display: flex; flex-direction: column; gap: 12px; }
+        .why-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 18px 18px 18px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(24, 32, 34, 0.06);
+        }
+        .why-card h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .why-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #111;
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            box-shadow: 0 6px 16px rgba(187, 218, 39, 0.45);
+        }
+
+        /* Comparison */
+        .comparison { display: flex; flex-direction: column; gap: 16px; }
+        .mockup {
+            background: var(--card);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(24, 32, 34, 0.06);
+        }
+        .mockup-head {
+            padding: 12px 16px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .mockup-head.before { background: #e6e6e6; color: #555; }
+        .mockup-head.after { background: var(--ink); color: var(--accent); }
+        .mockup-body { padding: 18px 16px 20px; }
+
+        .wf-block { background: #eee; margin-bottom: 10px; border-radius: 4px; padding: 12px; }
+        .wf-title { height: 12px; width: 55%; background: #ccc; margin-bottom: 8px; border-radius: 2px; }
+        .wf-text { height: 8px; width: 100%; background: #ddd; margin-bottom: 6px; border-radius: 2px; }
+        .wf-text.short { width: 75%; }
+        .wf-btn { height: 30px; width: 120px; background: #bbb; border-radius: 4px; margin: 15px auto 0; }
+        .wf-block.seo { border-left: 4px solid var(--accent); background: #fcfef3; }
+        .wf-block.seo .wf-title { background: var(--accent); width: 70%; }
+        .wf-tag {
+            display: block;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            background: #eef8c9;
+            color: #3a4a00;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .mockup-note {
+            margin-top: 16px;
+            font-size: 0.92rem;
+            color: #666;
+            text-align: center;
+        }
+        .mockup-note.after-note { color: var(--text); font-weight: 600; }
+
+        /* Package list */
+        .pkg-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 18px;
+        }
+        .chip {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid rgba(24, 32, 34, 0.08);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+        section.alt .chip { background: var(--bg); }
+        .scope { list-style: none; }
+        .scope li {
+            position: relative;
+            padding: 10px 0 10px 28px;
+            border-bottom: 1px solid rgba(24, 32, 34, 0.08);
+        }
+        .scope li:last-child { border-bottom: none; }
+        .scope li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.15em;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .footnote {
+            margin-top: 16px;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        /* Pricing */
+        .pricing { background: var(--ink); color: #fff; }
+        .pricing .section-title { color: #fff; text-align: center; }
+        .pricing .section-title::after { margin-left: auto; margin-right: auto; }
+        .urgency-box {
+            background: rgba(187, 218, 39, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 20px 18px;
+            margin: 24px auto 24px;
+            max-width: 700px;
+        }
+        .urgency-box h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .urgency-box p,
+        .urgency-box strong { color: rgba(255, 255, 255, 0.92); }
+        .urgency-box strong { color: #fff; font-weight: 800; }
+
+        .price-card {
+            background: var(--card);
+            color: var(--text);
+            border-radius: 16px;
+            padding: 24px 20px 22px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .promo-badge {
+            display: inline-block;
+            background: var(--ink);
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+        .price-old { color: #888; text-decoration: line-through; font-size: 1rem; }
+        .price-new {
+            font-family: "Mont-Bold", "Montserrat", sans-serif;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            color: var(--ink);
+            margin: 4px 0;
+        }
+        .price-new span { font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 700; }
+        .price-note { color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 52px;
+            padding: 14px 18px;
+            background: var(--accent);
+            color: #111;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover { filter: brightness(1.05); }
+        .btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+        .final-note {
+            margin-top: 18px;
+            padding: 16px;
+            background: #f7f8e8;
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            text-align: left;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        /* FAQ */
+        details.faq {
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 10px;
+            padding: 0 16px;
+            border: 1px solid rgba(24, 32, 34, 0.06);
+        }
+        details.faq summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+            padding: 16px 28px 16px 0;
+            position: relative;
+        }
+        details.faq summary::-webkit-details-marker { display: none; }
+        details.faq summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 16px;
+            color: #3a4a00;
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+        details.faq[open] summary::after { content: "–"; }
+        details.faq .faq-body { padding: 0 0 16px; color: var(--muted); }
+        details.faq .faq-body p + p { margin-top: 10px; }
+
+        footer {
+            background: #f2f2f2;
+            color: var(--muted);
+            padding: 28px 0 24px;
+            font-size: 0.88rem;
+            text-align: center;
+            border-top: 1px solid rgba(24, 32, 34, 0.08);
+        }
+        footer .logo {
+            height: 36px;
+            width: auto;
+            margin: 0 auto 12px;
+        }
+        footer a { color: var(--ink); }
+        footer p { margin-bottom: 6px; }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+            background: var(--ink);
+            border-top: 3px solid var(--accent);
+            padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        }
+        .sticky-cta .btn { min-height: 48px; font-size: 0.82rem; letter-spacing: 0.03em; }
+
+        @media (min-width: 768px) {
+            body { padding-bottom: 0; font-size: 17px; }
+            .container { max-width: 1000px; padding: 0 28px; }
+            .topbar .logo { height: 48px; }
+            header.hero { padding: 56px 0 64px; }
+            header.hero h1 { font-size: 2.35rem; max-width: 16em; }
+            header.hero .lead { font-size: 1.1rem; }
+            section { padding: 64px 0; }
+            .section-title { font-size: 1.75rem; }
+            .personal-message { padding: 32px; }
+            .why-list, .comparison {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 16px;
+            }
+            .comparison { grid-template-columns: 1fr 1fr; }
+            .price-card { max-width: 520px; margin: 0 auto; padding: 36px 40px 32px; }
+            .price-new { font-size: 3rem; }
+            .btn { width: auto; min-width: 280px; }
+            .sticky-cta { display: none; }
+            .scope, .footnote, details.faq, .section-intro { max-width: 740px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <div class="container">
+            <a href="https://localmedia.by/" rel="noopener">
+                <img class="logo" src="logo.png" width="121" height="60" alt="Local Media">
+            </a>
+            <div class="tag">предложение для Владислава</div>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Владислав, давайте посмотрим на ваш сайт <span>как на бизнес-проект</span></h1>
+            <p class="lead">Почему интеграция SEO на старте разработки — это не дополнительная трата, а инвестиция в защиту вашего бизнеса в Молодечно и создание актива, который работает 24/7.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="personal-message">
+                <h3>💡 Ситуация, которая нам знакома</h3>
+                <p>Мы понимаем, что сейчас у вас достаточно заказов. Вы загружены работой, и сайт может казаться просто «электронной визиткой» — чтобы быть на карте, показать, что вы существуете. И в этом нет ничего плохого.</p>
+                <p>Но бизнес — это динамика. Рынок памятников в Молодечно специфичен: <span class="highlight">рядом находится Минск</span>, и столичные компании с большими бюджетами активно занимают первые строчки в Яндексе и Google. Сегодня вы держите свою долю, но один сезон, изменение алгоритмов поиска или агрессивная кампания конкурентов могут незаметно сместить поток клиентов.</p>
+                <p>Наша цель сейчас не «продать вам SEO», а помочь вам <strong>занять и забронировать</strong> ваше место в поиске, пока это можно сделать максимально эффективно. Чтобы сайт перестал быть просто визиткой и стал вашим <strong>полноценным менеджером</strong>, который принимает заявки, когда вы на монтаже или в мастерской.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2 class="section-title">Зачем подключать SEO, пока сайт в разработке</h2>
+            <p class="section-intro">Вы уже заказали у нас новый сайт. Поисковая оптимизация на этом этапе — не отдельный «проект потом», а способ сразу заложить в него видимость в поиске.</p>
+            <div class="why-list">
+                <article class="why-card">
+                    <div class="why-num">1</div>
+                    <h3>Новый сайт сам по себе почти невидим</h3>
+                    <p>Пока нет отдельных страниц услуг, мета-тегов и индексации, человек, который ищет «памятники в Молодечно» или «установку памятника», чаще видит тех, у кого это уже сделано.</p>
+                </article>
+                <article class="why-card">
+                    <div class="why-num">2</div>
+                    <h3>На старте это дешевле, чем правки потом</h3>
+                    <p>Пока сайт собирается, структуру, адреса страниц и тексты можно заложить сразу. После запуска часть этого приходится переделывать, а поисковикам заново собирать картину сайта.</p>
+                </article>
+                <article class="why-card">
+                    <div class="why-num">3</div>
+                    <h3>К весеннему сезону нужна уже готовая база</h3>
+                    <p>В этой нише спрос обычно усиливается весной, в том числе в период Радуницы. Эффект SEO растёт постепенно, за месяцы работы, и сроков в выдаче мы не обещаем. Разумнее начать сейчас, параллельно с разработкой.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Как это работает: Механика роста сайта</h2>
+            <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">
+                Вам не нужно разбираться в технических терминах. Посмотрите на эту схему: вот как мы превращаем простую страницу в инструмент, который приводит целевых клиентов из Молодечно и района.
+            </p>
+
+            <div class="comparison">
+                <div class="mockup">
+                    <div class="mockup-head before">Обычный сайт-визитка (Как есть сейчас)</div>
+                    <div class="mockup-body">
+                        <div class="wf-block">
+                            <div class="wf-title" style="width: 40%;"></div>
+                            <div class="wf-text"></div>
+                            <div class="wf-text short"></div>
+                        </div>
+                        <div class="wf-block">
+                            <div class="wf-title" style="width: 50%;"></div>
+                            <div class="wf-text"></div>
+                        </div>
+                        <div class="wf-btn"></div>
+                        <p class="mockup-note">
+                            ❌ Поисковик видит "просто текст".<br>
+                            ❌ Нет ответа на конкретный запрос "памятники Молодечно цена".<br>
+                            ❌ Клиент уходит к конкуренту из Минска, у которого есть подробная страница.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mockup">
+                    <div class="mockup-head after">SEO-оптимизированный сайт (Пакет "Стандарт")</div>
+                    <div class="mockup-body">
+                        <div class="wf-block seo">
+                            <span class="wf-tag">Title: Памятники из гранита в Молодечно | Цены, установка</span>
+                            <div class="wf-title"></div>
+                            <div class="wf-text"></div>
+                            <div class="wf-text short"></div>
+                        </div>
+                        <div class="wf-block seo">
+                            <span class="wf-tag">Микроразметка: адрес, телефон, часы работы</span>
+                            <div class="wf-title" style="width: 40%;"></div>
+                            <div class="wf-text"></div>
+                        </div>
+                        <div class="wf-btn" style="background: var(--accent);"></div>
+                        <p class="mockup-note after-note">
+                            ✅ Поисковик понимает: это релевантный ответ для жителя Молодечно.<br>
+                            ✅ Микроразметка помогает показать адрес и телефон — если поисковик решит отобразить расширенный сниппет.<br>
+                            ✅ Клиент звонит вам, потому что вы выглядите профессиональнее.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2 class="section-title">Пакет «Стандарт» — что в него входит</h2>
+            <p class="section-intro">Состав и обычная цена — как на сайте Local Media. По декабрьскому условию вы получаете тот же объём работ по сниженной стоимости.</p>
+            <div class="pkg-meta">
+                <span class="chip">seo-оптимизация</span>
+                <span class="chip">20 часов работы команды</span>
+                <span class="chip">до 200 ключевых запросов</span>
+            </div>
+            <ul class="scope">
+                <li>Комплексный аудит сайта</li>
+                <li>Сбор семантического ядра (до 200 запросов)</li>
+                <li>Анализ конкурентов</li>
+                <li>Подключение вебмастеров (Яндекс.Вебмастер и Google Search Console)</li>
+                <li>Проверка и настройка корректной индексации сайта</li>
+                <li>Размещение в базовых каталогах, рейтингах</li>
+                <li>Настройка микроразметки</li>
+                <li>Оптимизация мета-тегов</li>
+                <li>Техническая оптимизация</li>
+                <li>Копирайтинг</li>
+                <li>Seo-оптимизация и размещение контента</li>
+                <li>Ежемесячные отчеты и анализ полученных результатов</li>
+            </ul>
+            <p class="footnote">*не включены услуги веб-разработчика и веб-дизайнера. Так как разработку сайта вы уже заказали у нас, структуру и технические правки согласуем с командой в рамках текущего проекта.</p>
+        </div>
+    </section>
+
+    <section class="pricing" id="offer">
+        <div class="container">
+            <h2 class="section-title">Следующий шаг</h2>
+
+            <div class="urgency-box">
+                <h3>⏳ Честный разговор о декабрьском предложении</h3>
+                <p>Владислав, я делаю этот акцент не ради "продаж любой ценой". Нам важно выстроить с вами долгосрочное партнерство.
+                Сейчас у нас есть возможность зафиксировать <strong>акционную стоимость</strong> на пакет "Стандарт". Это те же <strong>20 часов работы</strong> нашей сильной команды, тот же полный объем работ, но по сниженной цене. Вы не теряете в качестве. Вы получаете возможность подготовить бизнес к активному сезону с минимальными вложениями на старте.</p>
+            </div>
+
+            <div class="price-card">
+                <div class="promo-badge">Спецусловие до 31 декабря</div>
+                <div class="price-old">Обычная стоимость: 1&nbsp;850 BYN / мес</div>
+                <div class="price-new">1&nbsp;500 <span>BYN / мес</span></div>
+                <p class="price-note">Экономия 4&nbsp;200 BYN в год при сохранении полного объема работ</p>
+
+                <!-- В исходном файле не было телефона, Telegram или e-mail — только эта кнопка. Контакт не выдумывали. -->
+                <button type="button" class="btn" onclick="alert('Владислав, спасибо! Я подготовлю и вышлю вам проект заказа услуг.')">
+                    Выслать проект заказа услуг
+                </button>
+
+                <div class="final-note">
+                    <strong>Важно:</strong> Владислав, я направляю вам проект заказа услуг. Взвесьте все факты, оцените перспективы для вашего бизнеса и примите взвешенное решение.
+                    <br><br>
+                    Скидка действует до 31 декабря. Решение можно принимать спокойно.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <p class="section-intro">Коротко о том, что обычно спрашивают на этом этапе.</p>
+
+            <details class="faq">
+                <summary>У меня и так есть заказы. Зачем тогда SEO?</summary>
+                <div class="faq-body">
+                    <p>Если заказов достаточно, это сильная позиция. SEO здесь не про «срочно найти хоть кого-то», а про устойчивость: поиск остаётся каналом для людей, которые вас ещё не знают, в том числе из района и тех, кто сравнивает несколько мастерских.</p>
+                    <p>Новый сайт без оптимизации этот канал почти не открывает. С оптимизацией он начинает работать параллельно с уже привычными источниками — постепенно, без обещания мгновенного потока.</p>
+                </div>
+            </details>
+
+            <details class="faq">
+                <summary>Почему не подождать, пока сайт будет готов?</summary>
+                <div class="faq-body">
+                    <p>После запуска менять структуру и набор страниц дороже и дольше. Сейчас разработка уже идёт: если семантику и структуру заложить на этом этапе, к запуску сайт не начинает в поиске «с нуля».</p>
+                </div>
+            </details>
+
+            <details class="faq">
+                <summary>Когда будут результаты?</summary>
+                <div class="faq-body">
+                    <p>Не в первые недели. Эффект SEO обычно накапливается месяцами. На практике устойчивые изменения по запросам часто занимают около полугода регулярной работы, иногда быстрее по более узким запросам, иногда дольше. У нового сайта срок обычно больше.</p>
+                    <p>Мы не гарантируем позиции, сроки выхода в топ и количество заявок. В ежемесячном отчёте показываем то, что можно измерить: позиции, посещаемость после подключения Яндекс Метрики и заявки из форм, если настроим цели.</p>
+                </div>
+            </details>
+
+            <details class="faq">
+                <summary>Можно ли остановить работы, если передумаю?</summary>
+                <div class="faq-body">
+                    <p>Работы ведутся помесячно. Срок сотрудничества, порядок оплаты и условия завершения фиксируются в договоре — их стоит спокойно обсудить до старта.</p>
+                </div>
+            </details>
+
+            <details class="faq">
+                <summary>Домен и хостинг входят в стоимость?</summary>
+                <div class="faq-body">
+                    <p>Нет. Домен и хостинг оплачиваются отдельно и в пакет SEO «Стандарт» не входят.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img class="logo" src="logo.png" width="121" height="60" alt="Local Media">
+            <p>© 2026 Профессиональная разработка и SEO-продвижение. Мы помогаем локальному бизнесу расти.</p>
+            <p><a href="https://localmedia.by/" rel="noopener">localmedia.by</a></p>
+        </div>
+    </footer>
+
+    <div class="sticky-cta">
+        <button type="button" class="btn" onclick="document.getElementById('offer').scrollIntoView({behavior:'smooth'});">
+            Выслать проект заказа услуг
+        </button>
+    </div>
+
+</body>
+</html>
